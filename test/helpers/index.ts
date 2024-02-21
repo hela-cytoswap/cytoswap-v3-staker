@@ -17,7 +17,7 @@ import _ from 'lodash'
 import {
   TestERC20,
   INonfungiblePositionManager,
-  UniswapV3Staker,
+  CytoswapV3Staker,
   IUniswapV3Pool,
   TestIncentiveId,
 } from '../../typechain'
@@ -38,7 +38,7 @@ import { TestContext } from '../types'
 export class HelperCommands {
   actors: ActorFixture
   provider: MockProvider
-  staker: UniswapV3Staker
+  staker: CytoswapV3Staker
   nft: INonfungiblePositionManager
   router: ISwapRouter
   pool: IUniswapV3Pool
@@ -59,7 +59,7 @@ export class HelperCommands {
     testIncentiveId,
   }: {
     provider: MockProvider
-    staker: UniswapV3Staker
+    staker: CytoswapV3Staker
     nft: INonfungiblePositionManager
     router: ISwapRouter
     pool: IUniswapV3Pool
