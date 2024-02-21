@@ -1,6 +1,6 @@
 {
   "name": "@uniswap/v3-staker",
-  "description": "Canonical liquidity mining contract for Uniswap V3",
+  "description": "Canonical liquidity mining contract for Cytoswap V3",
   "license": "GPL-3.0-or-later",
   "version": "1.0.2",
   "homepage": "https://uniswap.org",
@@ -11,7 +11,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/Uniswap/uniswap-v3-staker"
+    "url": "https://gitlab.snapresearch.io/swapnity/v3-staker"
   },
   "files": [
     "contracts",
