@@ -1,17 +1,17 @@
 {
-  "name": "@uniswap/v3-staker",
+  "name": "@cytoswap/v3-staker",
   "description": "Canonical liquidity mining contract for Cytoswap V3",
   "license": "GPL-3.0-or-later",
   "version": "1.0.2",
-  "homepage": "https://uniswap.org",
+  "homepage": "https://cytoswap.org",
   "keywords": [
-    "uniswap",
+    "cytoswap",
     "liquidity mining",
     "v3"
   ],
   "repository": {
     "type": "git",
-    "url": "https://gitlab.snapresearch.io/swapnity/v3-staker"
+    "url": "https://gitlab.snapresearch.io/swapnity/cytoswap-v3-staker"
   },
   "files": [
     "contracts",
@@ -25,9 +25,9 @@
     "node": ">=10"
   },
   "dependencies": {
-    "@openzeppelin/contracts": "3.4.1-solc-0.7-2",
-    "@uniswap/v3-core": "1.0.0",
-    "@uniswap/v3-periphery": "^1.0.1"
+    "@cytoswap/v3-core": "^1.0.1",
+    "@cytoswap/v3-periphery": "1.4.6",
+    "@openzeppelin/contracts": "3.4.1-solc-0.7-2"
   },
   "devDependencies": {
     "@nomiclabs/hardhat-ethers": "^2.0.2",

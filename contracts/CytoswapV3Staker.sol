@@ -8,12 +8,12 @@ import './libraries/RewardMath.sol';
 import './libraries/NFTPositionInfo.sol';
 import './libraries/TransferHelperExtended.sol';
 
-import '@uniswap/v3-core/contracts/interfaces/IUniswapV3Factory.sol';
-import '@uniswap/v3-core/contracts/interfaces/IUniswapV3Pool.sol';
-import '@uniswap/v3-core/contracts/interfaces/IERC20Minimal.sol';
+import '@cytoswap/v3-core/contracts/interfaces/ICytoswapV3Factory.sol';
+import '@cytoswap/v3-core/contracts/interfaces/ICytoswapV3Pool.sol';
+import '@cytoswap/v3-core/contracts/interfaces/IERC20Minimal.sol';
 
-import '@uniswap/v3-periphery/contracts/interfaces/INonfungiblePositionManager.sol';
-import '@uniswap/v3-periphery/contracts/base/Multicall.sol';
+import '@cytoswap/v3-periphery/contracts/interfaces/INonfungiblePositionManager.sol';
+import '@cytoswap/v3-periphery/contracts/base/Multicall.sol';
 
 /// @title Cytoswap V3 canonical staking interface
 contract CytoswapV3Staker is ICytoswapV3Staker, Multicall {
@@ -40,7 +40,7 @@ contract CytoswapV3Staker is ICytoswapV3Staker, Multicall {
     }
 
     /// @inheritdoc ICytoswapV3Staker
-    IUniswapV3Factory public immutable override factory;
+    ICytoswapV3Factory public immutable override factory;
     /// @inheritdoc ICytoswapV3Staker
     INonfungiblePositionManager public immutable override nonfungiblePositionManager;
 
@@ -82,7 +82,7 @@ contract CytoswapV3Staker is ICytoswapV3Staker, Multicall {
     /// @param _maxIncentiveStartLeadTime the max duration of an incentive in seconds
     /// @param _maxIncentiveDuration the max amount of seconds into the future the incentive startTime can be set
     constructor(
-        IUniswapV3Factory _factory,
+        ICytoswapV3Factory _factory,
         INonfungiblePositionManager _nonfungiblePositionManager,
         uint256 _maxIncentiveStartLeadTime,
         uint256 _maxIncentiveDuration
@@ -322,7 +322,7 @@ contract CytoswapV3Staker is ICytoswapV3Staker, Multicall {
             'CytoswapV3Staker::stakeToken: token already staked'
         );
 
-        (IUniswapV3Pool pool, int24 tickLower, int24 tickUpper, uint128 liquidity) =
+        (ICytoswapV3Pool pool, int24 tickLower, int24 tickUpper, uint128 liquidity) =
             NFTPositionInfo.getPositionInfo(factory, nonfungiblePositionManager, tokenId);
 
         require(pool == key.pool, 'CytoswapV3Staker::stakeToken: token pool is not the incentive pool');

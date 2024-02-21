@@ -1,11 +1,11 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 pragma solidity =0.7.6;
 
-import '@uniswap/v3-periphery/contracts/interfaces/INonfungiblePositionManager.sol';
-import '@uniswap/v3-core/contracts/interfaces/IUniswapV3Factory.sol';
-import '@uniswap/v3-core/contracts/interfaces/IUniswapV3Pool.sol';
+import '@cytoswap/v3-periphery/contracts/interfaces/INonfungiblePositionManager.sol';
+import '@cytoswap/v3-core/contracts/interfaces/ICytoswapV3Factory.sol';
+import '@cytoswap/v3-core/contracts/interfaces/ICytoswapV3Pool.sol';
 
-import '@uniswap/v3-periphery/contracts/libraries/PoolAddress.sol';
+import '@cytoswap/v3-periphery/contracts/libraries/PoolAddress.sol';
 
 /// @notice Encapsulates the logic for getting info about a NFT token ID
 library NFTPositionInfo {
@@ -17,14 +17,14 @@ library NFTPositionInfo {
     /// @return tickUpper The upper tick of the Cytoswap V3 position
     /// @return liquidity The amount of liquidity staked
     function getPositionInfo(
-        IUniswapV3Factory factory,
+        ICytoswapV3Factory factory,
         INonfungiblePositionManager nonfungiblePositionManager,
         uint256 tokenId
     )
         internal
         view
         returns (
-            IUniswapV3Pool pool,
+            ICytoswapV3Pool pool,
             int24 tickLower,
             int24 tickUpper,
             uint128 liquidity
@@ -37,7 +37,7 @@ library NFTPositionInfo {
             tokenId
         );
 
-        pool = IUniswapV3Pool(
+        pool = ICytoswapV3Pool(
             PoolAddress.computeAddress(
                 address(factory),
                 PoolAddress.PoolKey({token0: token0, token1: token1, fee: fee})
