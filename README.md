@@ -1,4 +1,4 @@
-# uniswap-v3-staker
+# cytoswap-v3-staker
 
 This is the canonical staking contract designed for [Cytoswap V3](https://gitlab.snapresearch.io/swapnity/cytoswap-v3-core).
 

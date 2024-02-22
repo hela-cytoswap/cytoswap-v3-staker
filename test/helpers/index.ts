@@ -18,7 +18,7 @@ import {
   TestERC20,
   INonfungiblePositionManager,
   CytoswapV3Staker,
-  IUniswapV3Pool,
+  ICytoswapV3Pool,
   TestIncentiveId,
 } from '../../typechain'
 import { HelperTypes } from './types'
@@ -41,7 +41,7 @@ export class HelperCommands {
   staker: CytoswapV3Staker
   nft: INonfungiblePositionManager
   router: ISwapRouter
-  pool: IUniswapV3Pool
+  pool: ICytoswapV3Pool
   testIncentiveId: TestIncentiveId
 
   DEFAULT_INCENTIVE_DURATION = 2_000
@@ -62,7 +62,7 @@ export class HelperCommands {
     staker: CytoswapV3Staker
     nft: INonfungiblePositionManager
     router: ISwapRouter
-    pool: IUniswapV3Pool
+    pool: ICytoswapV3Pool
     actors: ActorFixture
     testIncentiveId: TestIncentiveId
   }) {

@@ -4,7 +4,7 @@ import { Wallet } from 'ethers'
 export const WALLET_USER_INDEXES = {
   WETH_OWNER: 0,
   TOKENS_OWNER: 1,
-  UNISWAP_ROOT: 2,
+  CYTOSWAP_ROOT: 2,
   STAKER_DEPLOYER: 3,
   LP_USER_0: 4,
   LP_USER_1: 5,
@@ -35,8 +35,8 @@ export class ActorFixture {
     return this._getActor(WALLET_USER_INDEXES.TOKENS_OWNER)
   }
 
-  uniswapRootUser() {
-    return this._getActor(WALLET_USER_INDEXES.UNISWAP_ROOT)
+  cytoswapRootUser() {
+    return this._getActor(WALLET_USER_INDEXES.CYTOSWAP_ROOT)
   }
 
   /* EOA that will deploy the staker */
@@ -61,7 +61,7 @@ export class ActorFixture {
     return [this.lpUser0(), this.lpUser1(), this.lpUser2()]
   }
 
-  /* These EOAs trade in the uniswap pools and incur fees */
+  /* These EOAs trade in the cytoswap pools and incur fees */
   traderUser0() {
     return this._getActor(WALLET_USER_INDEXES.TRADER_USER_0)
   }

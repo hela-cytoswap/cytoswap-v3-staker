@@ -1,5 +1,5 @@
 import { LoadFixtureFunction } from '../types'
-import { uniswapFixture, UniswapFixtureType } from '../shared/fixtures'
+import { cytoswapFixture, CytoswapFixtureType } from '../shared/fixtures'
 import {
   expect,
   getMaxTick,
@@ -30,7 +30,7 @@ describe('unit/Incentives', async () => {
   const Time = createTimeMachine(provider)
 
   let helpers: HelperCommands
-  let context: UniswapFixtureType
+  let context: CytoswapFixtureType
   let timestamps: ContractParams.Timestamps
 
   before('loader', async () => {
@@ -38,7 +38,7 @@ describe('unit/Incentives', async () => {
   })
 
   beforeEach('create fixture loader', async () => {
-    context = await loadFixture(uniswapFixture)
+    context = await loadFixture(cytoswapFixture)
     helpers = HelperCommands.fromTestContext(context, actors, provider)
   })
 
