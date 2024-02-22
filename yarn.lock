@@ -46,17 +46,17 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
-"@cytoswap/v3-core@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@cytoswap/v3-core/-/v3-core-1.0.1.tgz#ad00857ba59df5bf0c5957b1916089e015b534be"
-  integrity sha512-jiutCQPEdmmTcw0Sb9wat+4d46oqgKo6OZIFJO+Ww+iws7Awssl9TlFJoRUNAl8fwVV4raTKd0Y3T4Ps6M1C0Q==
+"@cytoswap/v3-core@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@cytoswap/v3-core/-/v3-core-1.0.2.tgz#c743f365547a2a23cc396c04e128d5d78f98e5bf"
+  integrity sha512-b9EQVBjk54sL4A60yequvrNY0pB3lxArfIUZh7DW7uyygN7SDxW3663Gt5aZ1YuA1014ux/gua3R9I5+U1gCZg==
 
-"@cytoswap/v3-periphery@1.4.6":
-  version "1.4.6"
-  resolved "https://registry.yarnpkg.com/@cytoswap/v3-periphery/-/v3-periphery-1.4.6.tgz#1bbe272af78c2c5e23ebf28f41110e3ff6031a13"
-  integrity sha512-iD2x52r/5PImlmBN3hKSfkTFSj+AoRoPLaGaGo24j9WTtk9rRvHs/V8vbebNspywaVZjfPOoEfz2UuZOjk9wUQ==
+"@cytoswap/v3-periphery@^1.4.8":
+  version "1.4.8"
+  resolved "https://registry.yarnpkg.com/@cytoswap/v3-periphery/-/v3-periphery-1.4.8.tgz#b7684e416ec558732447ded6c33b50b5cfaa3fe2"
+  integrity sha512-nv51dNfbyX+x0Sm94FlDoYE7BdUtULLSK29/YaZylylP+7JJp4iBFl50b3OcY/IsbERTx7TqPNF5V59Ia42rlg==
   dependencies:
-    "@cytoswap/v3-core" "^1.0.1"
+    "@cytoswap/v3-core" "^1.0.2"
     "@openzeppelin/contracts" "3.4.2-solc-0.7"
     "@uniswap/lib" "^4.0.1-alpha"
     "@uniswap/v2-core" "^1.0.1"
