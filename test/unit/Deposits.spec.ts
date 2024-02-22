@@ -1,7 +1,7 @@
 import { constants, BigNumberish, Wallet } from 'ethers'
 import { LoadFixtureFunction } from '../types'
 import { ethers } from 'hardhat'
-import { uniswapFixture, mintPosition, UniswapFixtureType } from '../shared/fixtures'
+import { cytoswapFixture, mintPosition, CytoswapFixtureType } from '../shared/fixtures'
 import {
   expect,
   getMaxTick,
@@ -34,14 +34,14 @@ describe('unit/Deposits', () => {
   const Time = createTimeMachine(provider)
   let helpers: HelperCommands
   const incentiveCreator = actors.incentiveCreator()
-  let context: UniswapFixtureType
+  let context: CytoswapFixtureType
 
   before('loader', async () => {
     loadFixture = createFixtureLoader(provider.getWallets(), provider)
   })
 
   beforeEach('create fixture loader', async () => {
-    context = await loadFixture(uniswapFixture)
+    context = await loadFixture(cytoswapFixture)
     helpers = HelperCommands.fromTestContext(context, actors, provider)
   })
 
@@ -318,7 +318,7 @@ describe('unit/Deposits', () => {
     })
 
     describe('on invalid call', async () => {
-      it('reverts when called by contract other than uniswap v3 nonfungiblePositionManager', async () => {
+      it('reverts when called by contract other than cytoswap v3 nonfungiblePositionManager', async () => {
         await expect(
           context.staker.connect(lpUser0).onERC721Received(incentiveCreator.address, lpUser0.address, 1, data)
         ).to.be.revertedWith('CytoswapV3Staker::onERC721Received: not a univ3 nft')

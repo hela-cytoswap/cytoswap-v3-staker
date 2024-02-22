@@ -2,8 +2,8 @@ import { Fixture } from 'ethereum-waffle'
 import { constants } from 'ethers'
 import { ethers, waffle } from 'hardhat'
 
-import UniswapV3Pool from '@cytoswap/v3-core/artifacts/contracts/CytoswapV3Pool.sol/CytoswapV3Pool.json'
-import UniswapV3FactoryJson from '@cytoswap/v3-core/artifacts/contracts/CytoswapV3Factory.sol/CytoswapV3Factory.json'
+import CytoswapV3Pool from '@cytoswap/v3-core/artifacts/contracts/CytoswapV3Pool.sol/CytoswapV3Pool.json'
+import CytoswapV3FactoryJson from '@cytoswap/v3-core/artifacts/contracts/CytoswapV3Factory.sol/CytoswapV3Factory.json'
 import NFTDescriptorJson from '@cytoswap/v3-periphery/artifacts/contracts/libraries/NFTDescriptor.sol/NFTDescriptor.json'
 import NonfungiblePositionManagerJson from '@cytoswap/v3-periphery/artifacts/contracts/NonfungiblePositionManager.sol/NonfungiblePositionManager.json'
 import NonfungibleTokenPositionDescriptor from '@cytoswap/v3-periphery/artifacts/contracts/NonfungibleTokenPositionDescriptor.sol/NonfungibleTokenPositionDescriptor.json'
@@ -37,8 +37,8 @@ export const wethFixture: Fixture<WETH9Fixture> = async ([wallet]) => {
 
 const v3CoreFactoryFixture: Fixture<ICytoswapV3Factory> = async ([wallet]) => {
   return ((await waffle.deployContract(wallet, {
-    bytecode: UniswapV3FactoryJson.bytecode,
-    abi: UniswapV3FactoryJson.abi,
+    bytecode: CytoswapV3FactoryJson.bytecode,
+    abi: CytoswapV3FactoryJson.abi,
   })) as unknown) as ICytoswapV3Factory
 }
 
@@ -68,7 +68,7 @@ const nftDescriptorLibraryFixture: Fixture<NFTDescriptor> = async ([wallet]) => 
   })) as NFTDescriptor
 }
 
-type UniswapFactoryFixture = {
+type CytoswapFactoryFixture = {
   weth9: IWETH9
   factory: ICytoswapV3Factory
   router: ISwapRouter
@@ -76,7 +76,7 @@ type UniswapFactoryFixture = {
   tokens: [TestERC20, TestERC20, TestERC20]
 }
 
-export const uniswapFactoryFixture: Fixture<UniswapFactoryFixture> = async (wallets, provider) => {
+export const cytoswapFactoryFixture: Fixture<CytoswapFactoryFixture> = async (wallets, provider) => {
   const { weth9, factory, router } = await v3RouterFixture(wallets, provider)
   const tokenFactory = await ethers.getContractFactory('TestERC20')
   const tokens = (await Promise.all([
@@ -198,7 +198,7 @@ export const mintPosition = async (
   }
 }
 
-export type UniswapFixtureType = {
+export type CytoswapFixtureType = {
   factory: ICytoswapV3Factory
   fee: FeeAmount
   nft: INonfungiblePositionManager
@@ -213,8 +213,8 @@ export type UniswapFixtureType = {
   token1: TestERC20
   rewardToken: TestERC20
 }
-export const uniswapFixture: Fixture<UniswapFixtureType> = async (wallets, provider) => {
-  const { tokens, nft, factory, router } = await uniswapFactoryFixture(wallets, provider)
+export const cytoswapFixture: Fixture<CytoswapFixtureType> = async (wallets, provider) => {
+  const { tokens, nft, factory, router } = await cytoswapFactoryFixture(wallets, provider)
   const signer = new ActorFixture(wallets, provider).stakerDeployer()
   const stakerFactory = await ethers.getContractFactory('CytoswapV3Staker', signer)
   const staker = (await stakerFactory.deploy(factory.address, nft.address, 2 ** 32, 2 ** 32)) as CytoswapV3Staker
@@ -254,4 +254,4 @@ export const uniswapFixture: Fixture<UniswapFixtureType> = async (wallets, provi
   }
 }
 
-export const poolFactory = new ethers.ContractFactory(UniswapV3Pool.abi, UniswapV3Pool.bytecode)
+export const poolFactory = new ethers.ContractFactory(CytoswapV3Pool.abi, CytoswapV3Pool.bytecode)

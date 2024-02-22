@@ -1,7 +1,7 @@
 import { BigNumber, Wallet } from 'ethers'
 import { LoadFixtureFunction } from '../types'
 import { TestERC20 } from '../../typechain'
-import { uniswapFixture, mintPosition, UniswapFixtureType } from '../shared/fixtures'
+import { cytoswapFixture, mintPosition, CytoswapFixtureType } from '../shared/fixtures'
 import {
   expect,
   getMaxTick,
@@ -34,7 +34,7 @@ describe('unit/Stakes', () => {
   const erc20Helper = new ERC20Helper()
   const Time = createTimeMachine(provider)
   let helpers: HelperCommands
-  let context: UniswapFixtureType
+  let context: CytoswapFixtureType
   let timestamps: ContractParams.Timestamps
   let tokenId: string
 
@@ -43,7 +43,7 @@ describe('unit/Stakes', () => {
   })
 
   beforeEach('create fixture loader', async () => {
-    context = await loadFixture(uniswapFixture)
+    context = await loadFixture(cytoswapFixture)
     helpers = HelperCommands.fromTestContext(context, actors, provider)
   })
 
@@ -53,7 +53,7 @@ describe('unit/Stakes', () => {
     let subject: (_tokenId: string, _actor: Wallet) => Promise<any>
 
     beforeEach(async () => {
-      context = await loadFixture(uniswapFixture)
+      context = await loadFixture(cytoswapFixture)
       helpers = HelperCommands.fromTestContext(context, actors, provider)
 
       /* We will be doing a lot of time-testing here, so leave some room between

@@ -36,7 +36,7 @@ jobs:
         run: yarn compile
 
       # - name: Compile Cytoswap V3 types
-      #   run: yarn compile-uniswap-contract-types
+      #   run: yarn compile-cytoswap-contract-types
 
       - name: Run tests
         run: yarn test

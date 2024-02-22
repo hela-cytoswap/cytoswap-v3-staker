@@ -1,21 +1,21 @@
 import { LoadFixtureFunction } from '../types'
 import { ethers } from 'hardhat'
 import { CytoswapV3Staker } from '../../typechain'
-import { uniswapFixture, UniswapFixtureType } from '../shared/fixtures'
+import { cytoswapFixture, CytoswapFixtureType } from '../shared/fixtures'
 import { expect } from '../shared'
 import { createFixtureLoader, provider } from '../shared/provider'
 
 let loadFixture: LoadFixtureFunction
 
 describe('unit/Deployment', () => {
-  let context: UniswapFixtureType
+  let context: CytoswapFixtureType
 
   before('loader', async () => {
     loadFixture = createFixtureLoader(provider.getWallets(), provider)
   })
 
   beforeEach('create fixture loader', async () => {
-    context = await loadFixture(uniswapFixture)
+    context = await loadFixture(cytoswapFixture)
   })
 
   it('deploys and has an address', async () => {
