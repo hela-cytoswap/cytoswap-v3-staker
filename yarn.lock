@@ -51,10 +51,10 @@
   resolved "https://registry.yarnpkg.com/@cytoswap/v3-core/-/v3-core-1.0.2.tgz#c743f365547a2a23cc396c04e128d5d78f98e5bf"
   integrity sha512-b9EQVBjk54sL4A60yequvrNY0pB3lxArfIUZh7DW7uyygN7SDxW3663Gt5aZ1YuA1014ux/gua3R9I5+U1gCZg==
 
-"@cytoswap/v3-periphery@^1.4.8":
-  version "1.4.8"
-  resolved "https://registry.yarnpkg.com/@cytoswap/v3-periphery/-/v3-periphery-1.4.8.tgz#b7684e416ec558732447ded6c33b50b5cfaa3fe2"
-  integrity sha512-nv51dNfbyX+x0Sm94FlDoYE7BdUtULLSK29/YaZylylP+7JJp4iBFl50b3OcY/IsbERTx7TqPNF5V59Ia42rlg==
+"@cytoswap/v3-periphery@^1.4.9":
+  version "1.4.9"
+  resolved "https://registry.yarnpkg.com/@cytoswap/v3-periphery/-/v3-periphery-1.4.9.tgz#c37fcff8c4f49f09324728ca92b3b4a7941635ea"
+  integrity sha512-e49dl/JzaJmG2RBg1yjgG7K0eEBXZU+X0nlfTs017Ryg3l/DT91xAljJ0zhOx0NlEqJ0AkPERDnPKYlXs/TDCg==
   dependencies:
     "@cytoswap/v3-core" "^1.0.2"
     "@openzeppelin/contracts" "3.4.2-solc-0.7"
