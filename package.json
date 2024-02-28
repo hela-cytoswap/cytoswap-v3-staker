@@ -2,7 +2,7 @@
   "name": "@cytoswap/v3-staker",
   "description": "Canonical liquidity mining contract for Cytoswap V3",
   "license": "GPL-3.0-or-later",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "homepage": "https://cytoswap.com",
   "keywords": [
     "cytoswap",
@@ -26,7 +26,7 @@
   },
   "dependencies": {
     "@cytoswap/v3-core": "^1.0.2",
-    "@cytoswap/v3-periphery": "^1.4.8",
+    "@cytoswap/v3-periphery": "^1.4.9",
     "@openzeppelin/contracts": "3.4.1-solc-0.7-2"
   },
   "devDependencies": {
